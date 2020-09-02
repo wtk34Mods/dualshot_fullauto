@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<ModInfo>
+		<Name value="dual shot full auto"/>
+		<Description value="adds a bow mod that lets you shoot two arrows at once, and a full auto pistol trigger."/>
+		<Author value="MaxFox Gaming"/>
+		<Version value="1.0"/>
+	</ModInfo>
+</xml>

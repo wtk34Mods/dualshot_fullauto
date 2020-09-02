@@ -1,0 +1,76 @@
+<Configs>
+
+<append xpath="/item_modifiers/item_modifier[@name='modGunSoundSuppressorSilencer']/@installable_tags">,turretRanged</append>
+
+
+<!-- makeing double shot bow mod, shoots two arrows at once -->
+<append xpath="/item_modifiers">
+    <item_modifier type="attachment" modifier_tags="dualShot, specialDamage, accuracy" installable_tags="bow, crossbow" name="modDualShot">
+        <property name="UnlockedBy" value="modDualShotSchematic"/>
+        <property name="CustomIcon" value="modGunBowArrowRest"/>
+        <property name="CustomIconTint" value="3d4a5e"/>
+        <property name="Stacknumber" value="1"/>
+        <property name="Group" value="Mods"/>
+        <property name="AutoReload" value="true"/>
+        <property name="DropMeshFile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+
+        <item_property_overrides name="BurstRoundCount">
+            <property name="ActivateObject" value="MagazineSize" count="1"/>
+			<property name="AlwaysActive" value="false"/>
+        </item_property_overrides>
+
+        <effect_group tiered="false">
+            <passive_effect name="MagazineSize" value="2" operation="base_set"/>
+            <passive_effect name="BurstRoundCount" value="2" operation="base_set" tags="perkArchery"/>
+            <passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.2"/>
+			<passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.1"/>
+            <passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value=".05"/>
+            <passive_effect name="ReloadSpeedMultiplier" operation="base_add" value="1"/>
+            <passive_effect name="DamageModifier" operation="perc_add" value="500" tags="head, bow, crossbow"/>
+            <passive_effect name="DamageModifier" operation="perc_add" value="10" tags="lowerbody,upperbody, bow, crossbow"/>
+        </effect_group>
+
+        <property name="PickupJournalEntry" value="augmentGunTips"/>
+    </item_modifier>
+
+
+<!-- Makes the pistol full auto -->
+    <item_modifier name="modGunPistolFullAuto" installable_tags="pistol,firingMode" modifier_tags="trigger" blocked_tags="noMods" type="attachment">
+	<property name="UnlockedBy" value="modGunPistolFullAutoSchematic"/>
+	<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+	<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+    <property name="CustomIcon" value="modGunTriggerGroupSemi"/>
+    <property name="CustomIconTint" value="eb4034"/>
+    <property name="AutoReload" value="true"/>
+
+	<effect_group tiered="false">
+		<passive_effect name="BurstRoundCount" operation="base_set" value="999"/>
+		<passive_effect name="RoundsPerMinute" operation="perc_add" value="2"/>
+		<passive_effect name="IncrementalSpreadMultiplier" operation="perc_add" value=".06"/>
+        <passive_effect name="MagazineSize" operation="base_add" value="60"/>       
+	</effect_group>
+		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+	</item_modifier>
+</append>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Configs>

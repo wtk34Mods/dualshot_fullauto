@@ -1,0 +1,5 @@
+
+modDualShot,item_modifiers,item_modifier,,,"Dual Shot"
+modDualShotDesc,item_modifiers,item_modifier,,,"This mod alows you to fire two arrows or two bolts from a bow or crossbow. It deals double the damage, and improves accuracy."
+modGunPistolFullAuto,item_modifiers,item_modifier,,,"Full Auto trigger for the pistol."
+modGunPistolFullAuto,item_modifiers,item_modifier,,," A trigger that makes the pistol full auto."
